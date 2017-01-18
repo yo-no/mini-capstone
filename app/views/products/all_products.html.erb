@@ -1,13 +1,20 @@
-<h1>SHIRT STORE</h1>
+<h1>SEVENTEEN FIVE</h1>
 
-<% @products.each do |shirt|%>
-  <div class="jumbotron">
-    <h2><%=shirt.name %></h2>
-    <h4>size: <%=shirt.size %></h4>
-    <h4>color: <%=shirt.color %></h4>
-    <img src=<%=shirt.image %>>
-    <p><%=shirt.description %></p>
+<div class="row">
+  <% @products.each do |shirt|%>
+  <div class="col-md-6">
+    <div class="product">
+      <h2><%=shirt.name %></h2>
+      <h4>size: <%=shirt.size %></h4>
+      <h4>color: <%=shirt.color %></h4>
+      <h4>price: $<%=shirt.price %>.99</h4>
+      <p><%=shirt.description %></p>
+    </div>   
   </div>
-
+  <div class="col-md-6">
+    <div class="thumbnail">
+      <img src=<%=shirt.image%>>
+    </div>
   </div>
-<% end%>
+  <% end%>
+</div>
