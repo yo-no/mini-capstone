@@ -1,0 +1,12 @@
+<h1>SHIRT STORE</h1>
+
+<% @products.each do |shirt|%>
+  <div class="jumbotron">
+    <h2><%=shirt.name %></h2>
+    <h4>size: <%=shirt.size %></h4>
+    <h4>color: <%=shirt.color %></h4>
+    <img src=<%=shirt.image %>>
+    <p><%=shirt.description %></p>
+
+  </div>
+<% end%>
