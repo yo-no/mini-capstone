@@ -2,7 +2,10 @@ $main-color: #ffb7f6;
 
 body{
   color: $main-color;
-  background-image: url("https://s-media-cache-ak0.pinimg.com/originals/35/93/28/359328db2a024848d488c660dd53321a.jpg");
+  font-family: futura;
+  background-image: url('marble.jpg');
+  background-attachment: fixed;
+  background-size: 100%;
 }
 
 img{
@@ -15,5 +18,5 @@ h1{
 
 .product{
   background: black;
-
+  padding: 10px;
 }
