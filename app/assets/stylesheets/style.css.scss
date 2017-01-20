@@ -9,7 +9,7 @@ body{
 }
 
 img{
-  height: 500px;
+
 }
 
 h1{
@@ -18,5 +18,12 @@ h1{
 
 .product{
   background: black;
+  border-radius: 25px;
   padding: 10px;
+}
+
+#biggie{
+  font-size: 100px;
+  background: black;
+  border-radius: 25px;
 }

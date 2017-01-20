@@ -1,0 +1,24 @@
+<h1 id="biggie">FRESH WHITE TEES</h1>
+
+<div class="row">
+  <% @products.each do |product|%>
+ <div class="col-md-6">
+     <div class="product">  
+
+     <a href="/products/<%=product.id%>"> 
+      <h2><%=product.name %></h2>
+     </a>
+
+      <h4>size: <%=product.size %></h4>
+      <h4>color: <%=product.color %></h4>
+      <h4>price: $<%=product.price %>.99</h4>
+      <p><%=product.description %></p>
+    </div>   
+  </div>
+  <div class="col-md-6">
+    <div class="thumbnail">
+      <img src=<%=product.image%>>
+    </div>
+  </div>
+  <% end%>
+</div>
