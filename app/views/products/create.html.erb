@@ -13,8 +13,4 @@
     </div>
   </div>
 
-  <a class="btn btn-default" href="/products">Home</a>
-  <a class="btn btn-info" href="/products/<%= @product.id %>/edit">Edit product</a>
-  <%= form_tag "/products/#{@product.id}", method: :delete do %>
-  <input class="btn btn-danger" type="submit" value=DESTROY>
-  <%end%>
+  <a href="/products">Home</a>

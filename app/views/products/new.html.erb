@@ -1,0 +1,29 @@
+<h1>New Shirt</h1>
+<%=form_tag "/products", method: :post do %>
+
+<form>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  name: <input type="text" name="name">
+
+
+  size: <input type="text" name="size">
+
+
+  color: <input type="text" name="color">
+
+
+  price: <input type="text" name="price">
+
+
+  image url: <input type="text" name="image">
+
+
+  description: <input type="text" name="description">
+
+<input type="submit" value="sell it">
+</form>
+<%end%>
