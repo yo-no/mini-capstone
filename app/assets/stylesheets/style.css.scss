@@ -27,3 +27,13 @@ h1{
   background: black;
   border-radius: 25px;
 }
+
+.thumbnail{
+     border:none !important;
+     background: transparent !important;
+     box-shadow:none !important;
+  }
+
+  img:hover{
+    -webkit-filter: invert(100%) !important;
+}

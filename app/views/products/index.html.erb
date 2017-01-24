@@ -1,5 +1,3 @@
-<h1 id="biggie">FRESH WHITE TEES</h1>
-
 <div class="row">
   <% @products.each do |product|%>
  <div class="col-md-6">
@@ -17,8 +15,12 @@
   </div>
   <div class="col-md-6">
     <div class="thumbnail">
-      <img src=<%=product.image%>>
+      <a href="/products/<%=product.id%>">
+        <img src=<%=product.image%>>
+      </a>
     </div>
   </div>
   <% end%>
 </div>
+
+<a class="btn btn-default" href="/product/new/">Add Product</a>
