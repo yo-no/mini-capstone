@@ -2,11 +2,38 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    sort_attribute = params[:sort]
+    sort_order = params[:sort_order]
+    discount_amount = params[:discount]
+
+    # if sort_attribute == "price_desc"
+    #   @products = @products.order(price: :desc)
+    # elsif sort_attribute == "sale"
+
+    if discount_amount
+      @products = @products.where("price < ?", discount_amount)
+    end
+
+    if sort_order && sort_attribute
+      @products = @products.order(sort_attribute => sort_order)
+    elsif sort_attribute
+      @products = @products.order(sort_attribute)
+    end
   end
 
+  # def random
+  #   @product = Product.all.sample
+  #   redirect_to "/products/#{@product.id}"
+  # end
+
   def show
-    product_id = params["id"]
-    @product = Product.find(params["id"])
+     product_id = params["id"]
+     if product_id == "random"
+       @product = Product.all.sample
+       redirect_to "/products/#{@product.id}"
+     else
+      @product = Product.find(params["id"])
+     end
   end
 
   def new
@@ -49,7 +76,12 @@ class ProductsController < ApplicationController
 
     flash[:success] = "Product Deleted Successfully!"
     redirect_to "/"
+  end
 
+  def search
+    search_term = params[:search_term]
+    @products = Product.where("name iLIKE ? OR description iLIKE ?", "%#{search_term}%", "%#{search_term}%")
+    render :index
   end
 
 end

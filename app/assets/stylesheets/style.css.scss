@@ -9,7 +9,7 @@ body{
 }
 
 img{
-
+  border: 10px ridge white;
 }
 
 h1{
@@ -17,8 +17,9 @@ h1{
 }
 
 .product{
-  background: black;
-  border-radius: 25px;
+  background: white;
+  background-opacity: 70%;
+  border: 10px ridge white;
   padding: 10px;
 }
 
@@ -36,4 +37,12 @@ h1{
 
   img:hover{
     -webkit-filter: invert(100%) !important;
+}
+
+.on-sale {
+  color: red;
+}
+
+a {
+  color: $main-color;
 }

@@ -1,0 +1,12 @@
+<div class="col-md-6">
+    <div class="product">
+      <h2><%=@supplier.name %></h2>
+      <h4>email: <%=@supplier.email %></h4>
+      <h4>phone: <%=@supplier.phone %></h4>
+      <a class="btn btn-info" href="/suppliers/<%= @supplier.id %>/edit">Edit supplier</a>
+      <%= form_tag "/suppliers/#{@supplier.id}", method: :delete do %>
+      <input class="btn btn-danger" type="submit" value=DESTROY>
+    </div>   
+  </div>
+  
+  <%end%>

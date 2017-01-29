@@ -3,12 +3,19 @@
       <h2><%=@product.name %></h2>
       <h4>size: <%=@product.size %></h4>
       <h4>color: <%=@product.color %></h4>
-      <h4>price: $<%=@product.price %>.99</h4>
+      <h4 class= <%= "on-sale" if @product.on_sale?%>>
+        <% if @product.on_sale? %>
+          Sale price:
+        <% else %>
+          Everyday low price:
+        <% end %>
+        <%= number_to_currency@product.price %></h4>
+      <h4>tax: <%= number_to_currency@product.tax %></h4>
+      <h4>total: <%= number_to_currency@product.total %></h4>
       <p><%=@product.description %></p>
-      <a class="btn btn-default" href="/products">Home</a>
-  <a class="btn btn-info" href="/products/<%= @product.id %>/edit">Edit product</a>
-  <%= form_tag "/products/#{@product.id}", method: :delete do %>
-  <input class="btn btn-danger" type="submit" value=DESTROY>
+      <a class="btn btn-info" href="/products/<%= @product.id %>/edit">Edit product</a>
+      <%= form_tag "/products/#{@product.id}", method: :delete do %>
+      <input class="btn btn-danger" type="submit" value=DESTROY>
     </div>   
   </div>
   <div class="col-md-6">
@@ -16,6 +23,5 @@
       <img src=<%=@product.image%>>
     </div>
   </div>
-
   
   <%end%>

@@ -1,0 +1,15 @@
+<div class="row">
+  <% @suppliers.each do |supplier| %>
+ <div class="col-md-6">
+     <div class="product">  
+
+     <a href="/suppliers/<%= supplier.id %>"> 
+      <h2><%= supplier.name %></h2>
+     </a>
+
+      <h4>email: <%= supplier.email %></h4>
+      <h4>phone: <%= supplier.phone %></h4>
+    </div>   
+  </div>
+  <% end %>
+</div>
