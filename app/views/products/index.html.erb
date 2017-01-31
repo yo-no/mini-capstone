@@ -13,10 +13,11 @@
       <p><%=product.description %></p>
     </div>   
   </div>
+  
   <div class="col-md-6">
     <div class="thumbnail">
       <a href="/products/<%=product.id%>">
-        <img src=<%=product.image%>>
+        <img src=<%= product.default_image %>>
       </a>
     </div>
   </div>

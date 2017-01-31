@@ -5,7 +5,6 @@ class ProductsController < ApplicationController
     sort_attribute = params[:sort]
     sort_order = params[:sort_order]
     discount_amount = params[:discount]
-
     # if sort_attribute == "price_desc"
     #   @products = @products.order(price: :desc)
     # elsif sort_attribute == "sale"
@@ -46,7 +45,7 @@ class ProductsController < ApplicationController
                               size: params["size"],
                               color: params["color"],
                               price: params["price"],
-                              image: params["image"],
+                              supplier_id: params[:supplier][:supplier_id],
                               description: params["description"],
                               )
     flash[:success] = "Product Created Successfully!"

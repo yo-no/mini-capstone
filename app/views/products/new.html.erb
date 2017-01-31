@@ -19,10 +19,13 @@
   price: <input type="text" name="price">
 
 
-  image url: <input type="text" name="image">
+  <% label_tag :supplier %>
+  <%= collection_select :supplier, :supplier_id, Supplier.all, :id, :name %>
 
 
   description: <input type="text" name="description">
+
+
 
 <input type="submit" value="sell it">
 </form>

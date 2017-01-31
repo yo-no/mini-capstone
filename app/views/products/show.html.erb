@@ -13,6 +13,7 @@
       <h4>tax: <%= number_to_currency@product.tax %></h4>
       <h4>total: <%= number_to_currency@product.total %></h4>
       <p><%=@product.description %></p>
+      <p>supplier: <%= @product.supplier.name %></p>
       <a class="btn btn-info" href="/products/<%= @product.id %>/edit">Edit product</a>
       <%= form_tag "/products/#{@product.id}", method: :delete do %>
       <input class="btn btn-danger" type="submit" value=DESTROY>
@@ -20,7 +21,9 @@
   </div>
   <div class="col-md-6">
     <div class="thumbnail">
-      <img src=<%=@product.image%>>
+      <% @product.images.each do |image| %>
+        <img src="<%=image.url%>">
+      <% end %>
     </div>
   </div>
   

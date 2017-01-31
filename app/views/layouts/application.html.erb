@@ -29,10 +29,8 @@
         <li><a href="/suppliers">Suppliers</a></li>
         
       </ul>
-      
         <%= form_tag "/products/search", method: :post do %>
-          <%= text_field_tag :search_term %>
-          <%= submit_tag "Search" %>
+          <%= text_field_tag :search_term %><%= submit_tag "Search" %>
         <% end %>
       <!-- <form class="navbar-form navbar-left">
         <div class="form-group">
@@ -50,6 +48,9 @@
             <li><a href="/products/?sort=price&sort_order=desc">price high to low</a></li>
           </ul>
         </li>
+        <li><a href="/signup">Sign Up</a></li>
+        <li><a href="/login">Log In</a></li>
+        <li><a href="/logout">Log Out</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
