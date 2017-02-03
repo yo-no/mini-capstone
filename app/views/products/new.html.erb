@@ -1,32 +1,44 @@
-<h1>New Shirt</h1>
-<%=form_tag "/products", method: :post do %>
+<section>
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <div class="product_single">
+            <h1>New Product:</h1>
+            
+            <%= form_tag '/products', method: :post do %>
+              <div>
+                <%= label_tag :name %>
+                <%= text_field_tag :name %>
+              </div>
+              
+              <div>
+                <%= label_tag :size %>
+                <%= text_field_tag :size %>
+              </div>
 
-<form>
-<!--   <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-  </div> -->
-  
-  name: <input type="text" name="name">
+              <div>
+                <%= label_tag :color %>
+                <%= text_field_tag :color %>
+              </div>
 
+              <div>
+                <%= label_tag :price %>
+                <%= text_field_tag :price %>
+              </div>
+              
+              <div>
+                <%= label_tag :supplier %>
+                <%= collection_select :supplier, :supplier_id, Supplier.all, :id, :name %>
+              </div>
+              
+              <div>
+                <%= label_tag :description %>
+                <%= text_area_tag :description, nil, size: "25x10" %>
+              </div>
 
-  size: <input type="text" name="size">
+              <%= submit_tag "Save Product" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+</section>
 
-
-  color: <input type="text" name="color">
-
-
-  price: <input type="text" name="price">
-
-
-  <% label_tag :supplier %>
-  <%= collection_select :supplier, :supplier_id, Supplier.all, :id, :name %>
-
-
-  description: <input type="text" name="description">
-
-
-
-<input type="submit" value="sell it">
-</form>
-<%end%>

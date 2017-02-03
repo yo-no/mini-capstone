@@ -2,6 +2,8 @@ class Product < ApplicationRecord
   belongs_to :supplier
   belongs_to :order, optional: true
   has_many :images
+  has_many :product_categories
+  has_many :categories, through: :product_categories
 
   def sale_message
     
