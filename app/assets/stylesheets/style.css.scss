@@ -1,48 +1,48 @@
-$main-color: #ffb7f6;
+// $main-color: #ffb7f6;
 
-body{
-  color: $main-color;
-  font-family: futura;
-  background-image: url('marble.jpg');
-  background-attachment: fixed;
-  background-size: 100%;
-}
+// body{
+//   color: $main-color;
+//   font-family: futura;
+//   background-image: url('marble.jpg');
+//   background-attachment: fixed;
+//   background-size: 100%;
+// }
 
-img{
-  border: 10px ridge white;
-}
+// img{
+//   border: 10px ridge white;
+// }
 
-h1{
-  text-align: center;
-}
+// h1{
+//   text-align: center;
+// }
 
-.product{
-  background: white;
-  background-opacity: 70%;
-  border: 10px ridge white;
-  padding: 10px;
-}
+// .product{
+//   background: white;
+//   background-opacity: 70%;
+//   border: 10px ridge white;
+//   padding: 10px;
+// }
 
-#biggie{
-  font-size: 100px;
-  background: black;
-  border-radius: 25px;
-}
+// #biggie{
+//   font-size: 100px;
+//   background: black;
+//   border-radius: 25px;
+// }
 
-.thumbnail{
-     border:none !important;
-     background: transparent !important;
-     box-shadow:none !important;
-  }
+// .thumbnail{
+//      border:none !important;
+//      background: transparent !important;
+//      box-shadow:none !important;
+//   }
 
-  img:hover{
-    -webkit-filter: invert(100%) !important;
-}
+//   img:hover{
+//     -webkit-filter: invert(100%) !important;
+// }
 
-.on-sale {
-  color: red;
-}
+// .on-sale {
+//   color: red;
+// }
 
-a {
-  color: $main-color;
-}
+// a {
+//   color: $main-color;
+// }

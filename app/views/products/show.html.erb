@@ -14,16 +14,34 @@
       <h4>total: <%= number_to_currency@product.total %></h4>
       <p><%=@product.description %></p>
       <p>supplier: <%= @product.supplier.name %></p>
-      <a class="btn btn-info" href="/products/<%= @product.id %>/edit">Edit product</a>
-      <%= form_tag "/products/#{@product.id}", method: :delete do %>
+
+<%= form_tag "/orders", method: :post do %>
+  <%= label_tag :quantity %>
+  <%= text_field_tag :quantity %>
+  <%= hidden_field_tag :product_id, @product.id %>
+  <%= submit_tag "Buy Now!", class: "btn btn-default" %>
+<% end %>
+
+
+
+
+
+
+  <a class="btn btn-info" href="/products/<%= @product.id %>/edit">Edit product</a>
+
+
+
+
+
+<%= form_tag "/products/#{@product.id}", method: :delete do %>
       <input class="btn btn-danger" type="submit" value=DESTROY>
     </div>   
-  </div>
+</div>
   <div class="col-md-6">
     <div class="thumbnail">
       <% @product.images.each do |image| %>
-        <img src="<%=image.url%>">
-      <% end %>
+              <img src="<%= image.url %>" alt="<%= @product.name %>" class="img-responsive">
+            <% end %>
     </div>
   </div>
   
