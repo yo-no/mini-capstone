@@ -5,9 +5,12 @@ class ProductsController < ApplicationController
     sort_attribute = params[:sort]
     sort_order = params[:sort_order]
     discount_amount = params[:discount]
-    # if sort_attribute == "price_desc"
-    #   @products = @products.order(price: :desc)
-    # elsif sort_attribute == "sale"
+    category_type = params[:category]
+
+    if category_type
+      category = Category.find_by(name: category_type)
+      @products = category.products
+    end
 
     if discount_amount
       @products = @products.where("price < ?", discount_amount)
