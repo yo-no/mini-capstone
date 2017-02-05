@@ -6,11 +6,6 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
-  def current_product
-    @current_product ||= Product.find_by(id: params[:product_id]) if params[:product_id]
-  end
-  helper_method :current_user
-
   def authenticate_user!
     redirect_to 'login' unless current_user
   end
