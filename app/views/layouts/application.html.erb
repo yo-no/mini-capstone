@@ -27,6 +27,7 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="/products/new">New Shirt <span class="sr-only">(current)</span></a></li>
         <li><a href="/suppliers">Suppliers</a></li>
+
         
       </ul>
         <%= form_tag "/products/search", method: :post do %>
@@ -63,10 +64,12 @@
           </ul>
         </li>
         <%if current_user %>
+          <li><a href="/carted_products">Your Cart</a></li>
           <li><a href="/logout">Log Out</a></li>
         <% else %>
           <li><a href="/signup">Sign Up</a></li>
           <li><a href="/login">Log In</a></li>
+
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
